@@ -2,7 +2,7 @@ class ImportantDatesController < ApplicationController
   # GET /important_dates
   # GET /important_dates.json
   def index
-    @important_dates = ImportantDate.where('date >= ?', Date.today).sort_by(&:date)
+    @important_dates = ImportantDate.where('date >= ?', Date.today).order("date")
 
     respond_to do |format|
         format.html # index.html.erb
